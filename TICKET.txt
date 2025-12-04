@@ -1,1 +1,14 @@
 link: https://www.youtube.com/watch?v=WMR4qdYFW-8
+
+
+# Создание окружения
+python -m venv venv
+
+# Активация (PowerShell)
+.\venv\Scripts\Activate.ps1
+
+# Активация (Command Prompt)
+venv\Scripts\activate.bat
+
+#Запуск сервера
+python manage.py runserver
