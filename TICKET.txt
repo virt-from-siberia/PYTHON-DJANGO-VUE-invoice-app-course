@@ -15,4 +15,4 @@ python manage.py runserver
 
 
 
-Python Django and Vue Full Course - Build An Invoicing Web App 25 minutes
+TICKET 35 MINUTES
