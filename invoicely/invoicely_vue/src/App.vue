@@ -1,49 +1,51 @@
 <template>
-  <div id="wrapper">
-    <nav class="navbar" is-dark>
-      <div class="navbar-brand">
-        <router-link to="/" class="navbar-item">
-          <strong>Invoicely</strong>
-        </router-link>
-      </div>
-
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <template v-if="$store.state.isAuthenticated">
-            <router-link to="/dashboard" class="navbar-item">
-              Dashboard
-            </router-link>
-          </template>
-
-          <template v-else>
-            <router-link to="/home" class="navbar-item">
-              Home
-            </router-link>
-
-            <div class="navbar-item">
-              <div class="buttons">
-                <router-link to="/sign-up" class="button is-success">
-                  <strong> Sign up</strong>
-                </router-link>
-                <router-link to="/log-in" class="button is-light">
-                  <strong>Log in</strong>
-                </router-link>
-              </div>
-            </div>
-          </template>
-
+  <div id="app">
+    <div id="wrapper">
+      <nav class="navbar" is-dark>
+        <div class="navbar-brand">
+          <router-link to="/" class="navbar-item">
+            <strong>Invoicely</strong>
+          </router-link>
         </div>
-      </div>
-    </nav>
+
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <template v-if="$store.state.isAuthenticated">
+              <router-link to="/dashboard" class="navbar-item">
+                Dashboard
+              </router-link>
+            </template>
+
+            <template v-else>
+              <router-link to="/home" class="navbar-item">
+                Home
+              </router-link>
+
+              <div class="navbar-item">
+                <div class="buttons">
+                  <router-link to="/sign-up" class="button is-success">
+                    <strong> Sign up</strong>
+                  </router-link>
+                  <router-link to="/log-in" class="button is-light">
+                    <strong>Log in</strong>
+                  </router-link>
+                </div>
+              </div>
+            </template>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="section">
+      <router-view />
+    </section>
+    <footer class="footer">
+      <p class="has-text-centered">
+        Copyright (c) 2025
+      </p>
+    </footer>
   </div>
-  <section class="section">
-    <router-view />
-  </section>
-  <footer class="footer">
-    <p class="has-text-centered">
-      Copyright (c) 2025
-    </p>
-  </footer>
 </template>
 
 
@@ -58,7 +60,7 @@ export default {
     const token = this.$store.state.token
 
     if (token) {
-      axios.defaults.headers.common['Authorization'] = "Token" + token
+      axios.defaults.headers.common['Authorization'] = "Token " + token
     } else {
       axios.defaults.headers.common['Authorization'] = ""
     }
