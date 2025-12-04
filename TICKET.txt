@@ -12,3 +12,7 @@ venv\Scripts\activate.bat
 
 #Запуск сервера
 python manage.py runserver
+
+
+
+Python Django and Vue Full Course - Build An Invoicing Web App 25 minutes
