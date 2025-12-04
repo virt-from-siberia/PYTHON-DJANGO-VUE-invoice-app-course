@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Dashboard from "@/views/dashboard/Dashboard.vue";
 import SignUp from "@/views/SignUp.vue";
 import LogIn from "@/views/LogIn.vue";
+import MyAccount from "@/views/dashboard/MyAccount.vue";
 
 import store from "@/store";
 
@@ -38,6 +39,11 @@ const routes = [
     meta: {
       requireLogin: true,
     },
+  },
+  {
+    path: "/dashboard/my-account",
+    name: "MyAccount",
+    component: MyAccount,
   },
 ];
 
